@@ -1,0 +1,77 @@
+Certainly! Let's walk through the memory allocation and deallocation using both Best Fit and First Fit strategies.
+
+**Memory Allocation and Deallocation Trace for Best Fit:**
+
+Initially, the memory has 1000 blocks available.
+
+1. Allocate 300 blocks: (300)  
+   Memory: [300] [FREE: 700]
+
+2. Allocate 200 blocks: (300) (200)  
+   Memory: [300] [200] [FREE: 500]
+
+3. Allocate 260 blocks: (300) (200) (260)  
+   Memory: [300] [200] [260] [FREE: 240]
+
+4. Deallocate 200 blocks: (-200)  
+   Memory: [300] [FREE: 200] [260] [FREE: 240]
+
+5. Allocate 100 blocks: (300) (100) (260)  
+   Memory: [300] [100] [260] [FREE: 140]
+
+6. Deallocate 300 blocks: (-300)  
+   Memory: [300] [FREE: 440]
+
+7. Allocate 250 blocks: (300) (250)  
+   Memory: [300] [250] [FREE: 190]
+
+8. Allocate 400 blocks: (300) (250) (400)  
+   Memory: [300] [250] [400] [FREE: 50]
+
+9. Deallocate 260 blocks: (-260)  
+   Memory: [300] [250] [FREE: 310] [FREE: 50]
+
+10. Allocate 150 blocks: (300) (250) (400) (150)  
+    Memory: [300] [250] [400] [150] [FREE: 50]
+
+11. Allocate 120 blocks: (300) (250) (400) (150) (120)  
+    Memory: [300] [250] [400] [150] [120] [FREE: 50]
+
+12. Deallocate 100 blocks: (-100)  
+    Memory: [300] [FREE: 100] [400] [150] [120] [FREE: 50]
+
+13. Deallocate 120 blocks: (-120)  
+    Memory: [300] [FREE: 220] [400] [150] [FREE: 50]
+
+14. Allocate 200 blocks: (300) (200) [FREE: 20] (400) (150)  
+    Memory: [300] [200] [400] [150] [FREE: 20]
+
+15. Deallocate 150 blocks: (-150)  
+    Memory: [300] [200] [400] [FREE: 170] [FREE: 20]
+
+16. Deallocate 250 blocks: (-250)  
+    Memory: [300] [200] [FREE: 420] [FREE: 170] [FREE: 20]
+
+17. Allocate 100 blocks: (300) (200) [100] [FREE: 320] [400]  
+    Memory: [300] [200] [100] [400] [FREE: 220] [FREE: 20]
+
+18. Deallocate 400 blocks: (-400)  
+    Memory: [300] [200] [100] [FREE: 620] [FREE: 20]
+
+19. Allocate 600 blocks: (300) (200) [100] [600]  
+    Memory: [300] [200] [100] [600] [FREE: 20]
+
+20. Deallocate 100 blocks: (-100)  
+    Memory: [300] [FREE: 100] [200] [100] [600] [FREE: 20]
+
+21. Deallocate 200 blocks: (-200)  
+    Memory: [300] [FREE: 300] [600] [FREE: 20]
+
+22. Deallocate 600 blocks: (-600)  
+    Memory: [FREE: 1000]
+
+**Memory Allocation and Deallocation Trace for First Fit:**
+
+The process is similar to the Best Fit strategy, but in the allocation step, the first available block that is large enough is chosen.
+
+Feel free to ask if you have any questions or if you would like further clarification!

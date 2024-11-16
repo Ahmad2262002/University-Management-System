@@ -1,0 +1,34 @@
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/normalize.min.css";
+
+.container {
+  width: 100%; /* Adjust this value to fit the width of your webpage */
+  overflow: hidden; /* Add this line to prevent the scrollport from extending outside the container */
+}
+
+.scrollport {
+  -webkit-mask-image: linear-gradient(to right, #0000, #000, #000, #0000);
+  
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  
+  display: flex;
+  gap: var(--size-10);
+  align-items: start;
+  padding: var(--size-10);
+  width: 100%;
+}
+
+.scrollport > div {
+  block-size: 20%;
+  aspect-ratio: var(--ratio-square);
+  background-color: var(--surface-2);
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-4);
+  background-size: cover;
+}
+
+body {
+  display: grid;
+  place-content: center;
+}
